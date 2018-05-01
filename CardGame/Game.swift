@@ -32,15 +32,43 @@ import Foundation
 
 
 class Game {
+    
     var point = 0   // 点数
     var clickMutiplier:Int {
         return 1
     }
     
+    var cards: [Card]
+    
+    
     func click() {
         point += clickMutiplier
     }
     
+    init() {
+        cards = Card.newCardSuit()
+    }
+    
+    func randomCard(inLevels levelRange:CountableRange<Int>) -> Card {
+        let index = cards.count.arc4random()
+        var templateCard = cards[index]
+        
+        var randomWeight = Card.kStandardWeight.arc4random() * Card.kWeightStride
+        
+        for level in levelRange {
+            if randomWeight > Card.kStandardWeight {
+                templateCard.level = level
+                break
+            }
+            randomWeight *= Card.kWeightStride
+        }
+        return templateCard
+    }
+
+    
+//    func summon(<#parameters#>) {
+//        <#function body#>
+//    }
     
     
     

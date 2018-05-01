@@ -16,20 +16,50 @@ import Foundation
  * 特性：加成功能等。
  */
 
+let cardTypes = ["C":"",
+                 "C++":"",
+                 "Java":"",
+                 "JavaScript":"",
+                 "Obj-C":"",
+                 "Swift":"",
+                 "Android":"",
+                 "C#":"",
+                 "汇编":""]
 
 struct Card {
     static let kStandardWeight = 1000000 // 权重基准
     static let kWeightStride = 10 // 权重级差
+    static let kMaxLevel = 5 // 等级
+    
 
-    var identifier:Int // 种类
-    var level:Int // 等级
-    var name:String {
-        return "\(identifier)"
+    /// returns a complete suit of cards include all levels
+    ///
+    /// - Returns: cards
+    static func newCardSuit() -> [Card] {
+        var cards = [Card]()
+        for level in 0...kMaxLevel {
+            cards.append(contentsOf: Card.cards(withLevel: level))
+        }
+        return cards
     }
     
+    private static func cards(withLevel level:Int) -> [Card] {
+        var cards = [Card]()
+        for (name, description) in cardTypes {
+            cards.append(Card(name:name , description: description, level: level))
+        }
+        return cards
+    }
+
+    
+    /// card properties
+    var identifier:String // 种类:等级
+    var name:String
+    var description:String
+    var level:Int // 等级 0-5 -> levels
     var count = 0 // 已获取的数量
     
-    var weight:Int  {
+    var weight:Int  { // 不是精确权重，包含上一级的权重
         var weight = Card.kStandardWeight
         for _ in 0..<level {
             weight /= Card.kWeightStride;
@@ -37,9 +67,15 @@ struct Card {
         return weight
     }
     
-    enum Level {
+    init(name:String, description:String, level:Int) {
+        self.name = name
+        self.description = description.isEmpty ? "一个看起来平平无奇的程序员" : description
+        self.level = level
+        self.count = 0
+        self.identifier = "\(name):level\(level)"
     }
-
+    
+    
     
 }
 

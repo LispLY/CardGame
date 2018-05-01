@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="CardGame" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="5kj-qT-kzR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="contentView">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-aU-IEc">
+                    <rect key="frame" x="8" y="8" width="120" height="160"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粗糙的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-aO-D5C">
+                            <rect key="frame" x="8" y="8" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-gU-vXb">
+                            <rect key="frame" x="28" y="32.5" width="65.5" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="程序员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPP-ZQ-jpn">
+                            <rect key="frame" x="35.5" y="72.5" width="49" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使手动敲代码的速度增加到原来的10倍。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-40-f1m">
+                            <rect key="frame" x="8" y="101.5" width="104" height="50.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5Eu-aO-D5C" firstAttribute="top" secondItem="TZc-aU-IEc" secondAttribute="top" constant="8" id="2N1-tE-bOg"/>
+                        <constraint firstItem="oPP-ZQ-jpn" firstAttribute="centerX" secondItem="YIc-gU-vXb" secondAttribute="centerX" id="67Y-LJ-GU1"/>
+                        <constraint firstItem="oPP-ZQ-jpn" firstAttribute="top" secondItem="YIc-gU-vXb" secondAttribute="bottom" constant="4" id="75v-0t-egb"/>
+                        <constraint firstItem="5Eu-aO-D5C" firstAttribute="leading" secondItem="TZc-aU-IEc" secondAttribute="leading" constant="8" id="8yP-Sp-Mwg"/>
+                        <constraint firstAttribute="height" constant="160" id="KiJ-nb-CUE"/>
+                        <constraint firstItem="YIc-gU-vXb" firstAttribute="centerY" secondItem="TZc-aU-IEc" secondAttribute="centerY" constant="-30" id="MTO-oj-HaG"/>
+                        <constraint firstAttribute="bottom" secondItem="QaG-40-f1m" secondAttribute="bottom" constant="8" id="ZWy-7W-kaH"/>
+                        <constraint firstItem="YIc-gU-vXb" firstAttribute="centerX" secondItem="TZc-aU-IEc" secondAttribute="centerX" id="bhG-y1-GrO"/>
+                        <constraint firstItem="QaG-40-f1m" firstAttribute="leading" secondItem="TZc-aU-IEc" secondAttribute="leading" constant="8" id="hU0-Cs-UIY"/>
+                        <constraint firstItem="QaG-40-f1m" firstAttribute="centerX" secondItem="TZc-aU-IEc" secondAttribute="centerX" id="hpu-pi-cVM"/>
+                        <constraint firstAttribute="trailing" secondItem="QaG-40-f1m" secondAttribute="trailing" constant="8" id="rtq-6c-RKD"/>
+                        <constraint firstAttribute="width" constant="120" id="xvV-0N-z7n"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TZc-aU-IEc" secondAttribute="trailing" constant="8" id="2yh-yC-je9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TZc-aU-IEc" secondAttribute="bottom" constant="8" id="9Jq-uR-FTK"/>
+                <constraint firstItem="TZc-aU-IEc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="kcm-dY-aRX"/>
+                <constraint firstItem="TZc-aU-IEc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="pFG-uY-fb5"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="0.5979184144295302" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+</document>

@@ -21,33 +21,37 @@ class GameViewController: UIViewController {
         sender.animate(withText: "lines += \(game.clickMutiplier);")
         game.click()
         updateUI()
+        clearViews()
     }
+    
+    @IBAction func summonButtonTapped(_ sender: UIButton) {
+        clearViews()
+        
+        let cardView = CardView(frame: CGRect(x: 0, y: 0, width: 136, height: 176))
+        view.addSubview(cardView)
+        cardView.awakeFromNib()
+        cardView.showInAnimation()
+    }
+    
     
     func updateUI() {
         lineCountLabel.text = "行数：\(game.point)";
         
-//        let bannerLabel = UILabel()
-//        bannerLabel.text = "+\(game.clickMutiplier)"
-//        bannerLabel.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-//
-//        bannerLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//        bannerLabel.center = CGPoint(x: view.center.x, y: view.center.y + KeyButton.kBannerStartY)
-//        bannerLabel.isHidden = false
-//        view.addSubview(bannerLabel)
-//
-//
-//        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseInOut, animations: {
-//            bannerLabel.center = CGPoint(x: self.view.center.x, y: self.view.center.y + KeyButton.kBannerEndY)
-//        }) { (sucess) in
-//            bannerLabel.removeFromSuperview()
-//        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearViews)))
         // Do any additional setup after loading the view.
     }
+    
+    @objc func clearViews() {
+        for view in view.subviews where view is CardView {
+            let cardView = view as! CardView
+            cardView.leaveAnimation()
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
