@@ -43,13 +43,15 @@ extension UIView {
 }
 
 extension UIView {
-    func toImage() -> UIImage {
+    func toImage() -> UIImage? {
         UIGraphicsBeginImageContext(bounds.size);
-        layer.render(in: UIGraphicsGetCurrentContext()!)
+        if let cgContext = UIGraphicsGetCurrentContext() {
+            layer.render(in: cgContext)
+        }
         defer {
             UIGraphicsEndImageContext()
         }
-        return UIGraphicsGetImageFromCurrentImageContext()!
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
 
